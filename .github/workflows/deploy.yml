@@ -1,13 +1,16 @@
 name: Deploy Portfolio
 on:
   push:
-    branches: [master] # 確認是 master 分支
+    branches: [master]
 permissions:
   contents: read
   pages: write
   id-token: write
 jobs:
-  build-and-deploy:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,7 +22,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "src" # 因為你的檔案在 src 裡
+          path: "src"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
