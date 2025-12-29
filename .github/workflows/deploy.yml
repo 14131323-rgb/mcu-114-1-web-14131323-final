@@ -1,0 +1,37 @@
+name: Deploy Portfolio with SASS
+
+on:
+  push:
+    branches: [main, master] # 支援 main 或 master 分支
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install SASS
+        run: sudo apt-get install -y sass
+
+      # 根據你的檔案結構，我們在發布前將 src 裡的 scss 轉成 css
+      - name: Compile SCSS
+        run: sass src/style.scss src/style.css
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # 告訴 GitHub 要發布的是 src 資料夾裡的內容
+          path: "src"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
