@@ -2,14 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Inter", sans-serif;
 }
+
 html {
   scroll-behavior: smooth;
-}
-body {
-  background: #fff;
-  color: #333;
 }
 
 header {
@@ -20,25 +17,25 @@ header {
   z-index: 100;
   border-bottom: 1px solid #eee;
 }
-.navbar {
+header .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.navbar ul {
+header .navbar ul {
   display: flex;
   list-style: none;
 }
-.navbar ul li {
+header .navbar ul li {
   position: relative;
   padding: 5px 15px;
 }
-.navbar ul li a {
+header .navbar ul li a {
   text-decoration: none;
   color: #666;
   font-size: 14px;
 }
-.navbar ul li.active::after {
+header .navbar ul li.active::after {
   content: "";
   position: absolute;
   bottom: -5px;
@@ -59,45 +56,53 @@ header {
   font-size: 12px;
 }
 
+section {
+  padding: 80px 15%;
+}
+section h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+section .section-desc {
+  text-align: center;
+  color: #999;
+  margin-bottom: 50px;
+}
+
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 80px 10%;
   background: #f9f9f9;
 }
-.badge {
+.hero .badge {
   background: #ffe066;
-  padding: 2px 10px;
+  padding: 4px 10px;
   border-radius: 4px;
   font-size: 12px;
+  font-weight: bold;
 }
 .hero h1 {
   font-size: 40px;
   margin: 15px 0;
 }
-.hero p {
-  max-width: 450px;
-  color: #777;
-  margin-bottom: 25px;
+.hero .hero-btns button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
 }
-.btn-primary {
+.hero .hero-btns button.btn-primary {
   background: #5c67f2;
   color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
+  margin-right: 10px;
 }
-.btn-secondary {
+.hero .hero-btns button.btn-secondary {
   background: none;
   border: 1px solid #ccc;
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin-left: 10px;
-  cursor: pointer;
 }
-.hero-image img {
+.hero .hero-image img {
   width: 280px;
   height: 280px;
   border-radius: 50%;
@@ -105,43 +110,24 @@ header {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-section {
-  padding: 80px 15%;
-}
-section h2 {
-  text-align: center;
-  font-size: 28px;
-}
-.section-desc {
-  text-align: center;
-  color: #999;
-  margin-bottom: 40px;
-  font-size: 14px;
-}
-
 .about-container {
   display: flex;
-  gap: 50px;
+  gap: 60px;
 }
-.about-text,
-.education {
-  flex: 1;
-}
-.education li {
+.about-container .education li {
   display: flex;
   align-items: center;
   padding: 10px 0;
   border-bottom: 1px solid #eee;
-  font-size: 14px;
 }
-.education li .dot {
+.about-container .education li .dot {
   width: 8px;
   height: 8px;
   background: #6c5ce7;
   border-radius: 50%;
   margin-right: 15px;
 }
-.education li span:last-child {
+.about-container .education li span:last-child {
   margin-left: auto;
   color: #999;
 }
@@ -149,30 +135,31 @@ section h2 {
 .skills {
   background: #f0f7ff;
 }
-.skill-info {
+.skills .skill-item {
+  margin-bottom: 25px;
+}
+.skills .skill-item .skill-info {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5px;
-  font-size: 14px;
   font-weight: bold;
 }
-.progress-bar {
+.skills .skill-item .progress-bar {
   background: #e0e0e0;
   height: 8px;
   border-radius: 10px;
 }
-.progress {
+.skills .skill-item .progress-bar .progress {
   background: #6c5ce7;
   height: 100%;
   border-radius: 10px;
 }
 
-.project-grid {
+.projects .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-.project-card {
+.projects .project-grid .project-card {
   background: #fdfdfd;
   border: 1px solid #eee;
   padding: 30px 10px;
@@ -182,14 +169,9 @@ section h2 {
   text-decoration: none;
   color: inherit;
 }
-.project-card:hover {
+.projects .project-grid .project-card:hover {
   transform: translateY(-5px);
   border-color: #5c67f2;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-.search-icon {
-  margin-top: 15px;
-  color: #5c67f2;
 }
 
 footer {
@@ -197,11 +179,8 @@ footer {
   padding: 40px;
   border-top: 1px solid #eee;
 }
-.social-footer {
-  margin-bottom: 15px;
-}
-.social-footer i {
+footer .social-footer i {
   margin: 0 10px;
   color: #666;
   font-size: 20px;
-}
+}/*# sourceMappingURL=style.css.map */

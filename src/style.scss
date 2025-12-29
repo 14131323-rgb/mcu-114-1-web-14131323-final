@@ -1,0 +1,194 @@
+$primary-purple: #6c5ce7;
+$soft-blue: #5c67f2;
+$bg-gray: #f9f9f9;
+$badge-yellow: #ffe066;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  padding: 15px 10%;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 100;
+  border-bottom: 1px solid #eee;
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul {
+      display: flex;
+      list-style: none;
+      li {
+        position: relative;
+        padding: 5px 15px;
+        a {
+          text-decoration: none;
+          color: #666;
+          font-size: 14px;
+        }
+        &.active::after {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 4px;
+          height: 4px;
+          background: $soft-blue;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+
+.btn-download {
+  background: #333;
+  color: #fff;
+  padding: 6px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+section {
+  padding: 80px 15%;
+  h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  .section-desc {
+    text-align: center;
+    color: #999;
+    margin-bottom: 50px;
+  }
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: $bg-gray;
+  .badge {
+    background: $badge-yellow;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  h1 {
+    font-size: 40px;
+    margin: 15px 0;
+  }
+  .hero-btns {
+    button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+      &.btn-primary {
+        background: $soft-blue;
+        color: #fff;
+        margin-right: 10px;
+      }
+      &.btn-secondary {
+        background: none;
+        border: 1px solid #ccc;
+      }
+    }
+  }
+  .hero-image img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.about-container {
+  display: flex;
+  gap: 60px;
+  .education li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: $primary-purple;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+    span:last-child {
+      margin-left: auto;
+      color: #999;
+    }
+  }
+}
+
+.skills {
+  background: #f0f7ff;
+  .skill-item {
+    margin-bottom: 25px;
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+    }
+    .progress-bar {
+      background: #e0e0e0;
+      height: 8px;
+      border-radius: 10px;
+      .progress {
+        background: $primary-purple;
+        height: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.projects {
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // 確保影片中的三欄排版
+    gap: 20px;
+    .project-card {
+      background: #fdfdfd;
+      border: 1px solid #eee;
+      padding: 30px 10px;
+      text-align: center;
+      border-radius: 8px;
+      transition: 0.3s;
+      text-decoration: none;
+      color: inherit;
+      &:hover {
+        transform: translateY(-5px);
+        border-color: $soft-blue;
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid #eee;
+  .social-footer i {
+    margin: 0 10px;
+    color: #666;
+    font-size: 20px;
+  }
+}
