@@ -20,51 +20,52 @@
           <li><a href="#skills">技術</a></li>
           <li><a href="#projects">作品集</a></li>
         </ul>
-        <a href="#" class="btn-download">下載履歷</a>
+        <a href="#" class="btn-download"
+          >下載履歷 <i class="fa-solid fa-download"></i
+        ></a>
       </nav>
     </header>
 
     <section id="home" class="hero">
       <div class="hero-content">
-        <span class="badge">前端工程師</span>
+        <span class="badge">黃俊壹 (Oliver)</span>
         <h1>我是全端工程師</h1>
         <p>
-          熟悉使用 HTML、CSS、JS 以及 JavaScript
-          以及後端等技術架構，提供良好的解決方案，追求更優質的工作環境與前端架構。
+          經驗豐富的全端開發人員，致力於創建視覺上令人震撼且用戶友好的網站。
         </p>
         <div class="hero-btns">
           <button class="btn-primary">Hire Me</button>
-          <button class="btn-secondary">下載履歷</button>
+          <button class="btn-secondary">
+            下載履歷 <i class="fa-solid fa-download"></i>
+          </button>
         </div>
         <div class="social-links">
-          <a href="#"><i class="fa-brands fa-github"></i></a>
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
           <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
         </div>
       </div>
       <div class="hero-image">
-        <img src="https://via.placeholder.com/300" alt="Avatar" />
+        <img
+          src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix"
+          alt="Avatar"
+        />
       </div>
     </section>
 
     <section id="about" class="about">
       <h2>關於我</h2>
-      <p class="section-desc">Lorem ipsum dolor sit amet consectetur...</p>
       <div class="about-container">
         <div class="about-text">
           <h3>自我介紹</h3>
-          <p>熟悉使用 HTML、CSS、JS 以及 JavaScript 以及後端等技術架構...</p>
+          <p>追求更優質的工作環境與前端架構，提供良好的解決方案。</p>
         </div>
         <div class="education">
           <h3>教育程度</h3>
           <ul>
             <li>
               <span class="dot"></span> <strong>銘傳大學 資訊管理學系</strong>
-              <span>2021/9 - 2025/6</span>
-            </li>
-            <li>
-              <span class="dot"></span>
-              <strong>xxx 大學 資訊網路與管理學系</strong>
               <span>2021/9 - 2025/6</span>
             </li>
           </ul>
@@ -88,21 +89,15 @@
           </div>
         </div>
         <div class="skill-item">
-          <div class="skill-info"><span>JavaScript</span><span>50%</span></div>
-          <div class="progress-bar">
-            <div class="progress" style="width: 50%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
           <div class="skill-info"><span>CSS</span><span>80%</span></div>
           <div class="progress-bar">
             <div class="progress" style="width: 80%"></div>
           </div>
         </div>
         <div class="skill-item">
-          <div class="skill-info"><span>Java</span><span>65%</span></div>
+          <div class="skill-info"><span>JavaScript</span><span>75%</span></div>
           <div class="progress-bar">
-            <div class="progress" style="width: 65%"></div>
+            <div class="progress" style="width: 75%"></div>
           </div>
         </div>
       </div>
@@ -110,34 +105,34 @@
 
     <section id="projects" class="projects">
       <h2>作品集</h2>
-      <p class="section-desc">展示我的近期作品</p>
+      <p class="section-desc">歷年作品展示</p>
       <div class="project-grid">
         <a href="project1.html" class="project-card">
           <h4>作品 1</h4>
-          <p>主要使用的技術介紹</p>
+          <p>主要實作網站切版</p>
           <div class="search-icon">
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
         </a>
         <div class="project-card">
           <h4>作品 2</h4>
-          <p>主要使用的技術介紹</p>
+          <p>主要實作網站切版</p>
         </div>
         <div class="project-card">
           <h4>作品 3</h4>
-          <p>主要使用的技術介紹</p>
+          <p>主要實作網站切版</p>
         </div>
         <div class="project-card">
           <h4>作品 4</h4>
-          <p>主要使用的技術介紹</p>
+          <p>主要實作網站切版</p>
         </div>
         <div class="project-card">
           <h4>作品 5</h4>
-          <p>主要使用的技術介紹</p>
+          <p>主要實作網站切版</p>
         </div>
         <div class="project-card">
           <h4>作品 6</h4>
-          <p>主要使用的技術介紹</p>
+          <p>主要實作網站切版</p>
         </div>
       </div>
     </section>
@@ -145,10 +140,31 @@
     <footer>
       <div class="social-footer">
         <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
         <a href="#"><i class="fa-brands fa-facebook"></i></a>
         <a href="#"><i class="fa-brands fa-github"></i></a>
       </div>
       <p>Copyright © 2024</p>
     </footer>
+
+    <script>
+      const sections = document.querySelectorAll("section");
+      const navLi = document.querySelectorAll(".navbar ul li");
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (pageYOffset >= sectionTop - 150) {
+            current = section.getAttribute("id");
+          }
+        });
+        navLi.forEach((li) => {
+          li.classList.remove("active");
+          if (li.querySelector("a").getAttribute("href") === `#${current}`) {
+            li.classList.add("active");
+          }
+        });
+      });
+    </script>
   </body>
 </html>

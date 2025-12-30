@@ -34,7 +34,9 @@ header {
           text-decoration: none;
           color: #666;
           font-size: 14px;
+          transition: 0.3s;
         }
+        /* 整合：導覽列圓點 */
         &.active::after {
           content: "";
           position: absolute;
@@ -45,9 +47,21 @@ header {
           height: 4px;
           background: $soft-blue;
           border-radius: 50%;
+          animation: dotPop 0.3s ease-out;
         }
       }
     }
+  }
+}
+
+@keyframes dotPop {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 5px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
   }
 }
 
@@ -90,20 +104,41 @@ section {
     font-size: 40px;
     margin: 15px 0;
   }
-  .hero-btns {
-    button {
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      border: none;
-      &.btn-primary {
-        background: $soft-blue;
-        color: #fff;
-        margin-right: 10px;
-      }
-      &.btn-secondary {
-        background: none;
-        border: 1px solid #ccc;
+  .hero-btns button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    &.btn-primary {
+      background: $soft-blue;
+      color: #fff;
+      margin-right: 10px;
+    }
+    &.btn-secondary {
+      background: none;
+      border: 1px solid #ccc;
+    }
+  }
+  .social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    a {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      &:hover {
+        background: $primary-purple;
+        color: white;
+        transform: translateY(-3px);
       }
     }
   }
@@ -113,28 +148,6 @@ section {
     border-radius: 50%;
     border: 5px solid #fff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  }
-}
-
-.about-container {
-  display: flex;
-  gap: 60px;
-  .education li {
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-    .dot {
-      width: 8px;
-      height: 8px;
-      background: $primary-purple;
-      border-radius: 50%;
-      margin-right: 15px;
-    }
-    span:last-child {
-      margin-left: auto;
-      color: #999;
-    }
   }
 }
 
@@ -160,24 +173,23 @@ section {
   }
 }
 
-.projects {
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); // 確保影片中的三欄排版
-    gap: 20px;
-    .project-card {
-      background: #fdfdfd;
-      border: 1px solid #eee;
-      padding: 30px 10px;
-      text-align: center;
-      border-radius: 8px;
-      transition: 0.3s;
-      text-decoration: none;
-      color: inherit;
-      &:hover {
-        transform: translateY(-5px);
-        border-color: $soft-blue;
-      }
+.projects .project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  .project-card {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 30px 10px;
+    text-align: center;
+    border-radius: 8px;
+    transition: 0.3s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $soft-blue;
     }
   }
 }
@@ -186,9 +198,26 @@ footer {
   text-align: center;
   padding: 40px;
   border-top: 1px solid #eee;
-  .social-footer i {
-    margin: 0 10px;
-    color: #666;
-    font-size: 20px;
+  .social-footer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    a {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      text-decoration: none;
+      transition: 0.3s;
+      &:hover {
+        background: $primary-purple;
+        color: white;
+      }
+    }
   }
 }
