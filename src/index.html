@@ -28,8 +28,8 @@
 
     <section id="home" class="hero">
       <div class="hero-content">
-        <span class="badge">黃俊壹 (Oliver)</span>
-        <h1>我是全端工程師</h1>
+        <span class="badge">李晉安 (Alpha)</span>
+        <h1>我是大學生</h1>
         <p>
           經驗豐富的全端開發人員，致力於創建視覺上令人震撼且用戶友好的網站。
         </p>
@@ -56,18 +56,19 @@
 
     <section id="about" class="about">
       <h2>關於我</h2>
-      <div class="about-container">
-        <div class="about-text">
+      <div class="about-content">
+        <div class="intro-section">
           <h3>自我介紹</h3>
           <p>追求更優質的工作環境與前端架構，提供良好的解決方案。</p>
         </div>
-        <div class="education">
+        <div class="edu-section">
           <h3>教育程度</h3>
           <ul>
             <li>
-              <span class="dot"></span> <strong>銘傳大學 資訊管理學系</strong>
-              <span>2021/9 - 2025/6</span>
+              <span class="circle"></span> 銘傳大學 資訊管理學系 2025/9 -
+              2025/12
             </li>
+            <li><span class="circle"></span>三民高中 普通班 2021/9 - 2025/6</li>
           </ul>
         </div>
       </div>
@@ -89,15 +90,15 @@
           </div>
         </div>
         <div class="skill-item">
-          <div class="skill-info"><span>CSS</span><span>80%</span></div>
-          <div class="progress-bar">
-            <div class="progress" style="width: 80%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
           <div class="skill-info"><span>JavaScript</span><span>75%</span></div>
           <div class="progress-bar">
             <div class="progress" style="width: 75%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>CSS</span><span>80%</span></div>
+          <div class="progress-bar">
+            <div class="progress" style="width: 80%"></div>
           </div>
         </div>
       </div>
@@ -149,18 +150,36 @@
 
     <script>
       const sections = document.querySelectorAll("section");
-      const navLi = document.querySelectorAll(".navbar ul li");
+      const navLinks = document.querySelectorAll(".navbar ul li a");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute("href");
+          const targetSection = document.querySelector(targetId);
+
+          if (targetSection) {
+            window.scrollTo({
+              top: targetSection.offsetTop - 70,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
       window.addEventListener("scroll", () => {
         let current = "";
         sections.forEach((section) => {
           const sectionTop = section.offsetTop;
-          if (pageYOffset >= sectionTop - 150) {
+          if (window.pageYOffset >= sectionTop - 150) {
             current = section.getAttribute("id");
           }
         });
-        navLi.forEach((li) => {
+
+        navLinks.forEach((link) => {
+          const li = link.parentElement;
           li.classList.remove("active");
-          if (li.querySelector("a").getAttribute("href") === `#${current}`) {
+          if (link.getAttribute("href") === `#${current}`) {
             li.classList.add("active");
           }
         });

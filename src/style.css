@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -30,13 +29,11 @@ header .navbar ul {
 header .navbar ul li {
   position: relative;
   padding: 5px 15px;
-  /* 整合：導覽列圓點 */
 }
 header .navbar ul li a {
   text-decoration: none;
   color: #666;
   font-size: 14px;
-  transition: 0.3s;
 }
 header .navbar ul li.active::after {
   content: "";
@@ -48,19 +45,8 @@ header .navbar ul li.active::after {
   height: 4px;
   background: #5c67f2;
   border-radius: 50%;
-  animation: dotPop 0.3s ease-out;
 }
 
-@keyframes dotPop {
-  from {
-    opacity: 0;
-    transform: translate(-50%, 5px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-}
 .btn-download {
   background: #333;
   color: #fff;
@@ -71,16 +57,11 @@ header .navbar ul li.active::after {
 }
 
 section {
-  padding: 80px 15%;
+  padding: 80px 10%;
 }
 section h2 {
   text-align: center;
   font-size: 32px;
-  margin-bottom: 10px;
-}
-section .section-desc {
-  text-align: center;
-  color: #999;
   margin-bottom: 50px;
 }
 
@@ -147,23 +128,57 @@ section .section-desc {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.skills {
-  background: #f0f7ff;
+.about-content {
+  display: flex;
+  gap: 50px;
+  text-align: left;
 }
-.skills .skill-item {
-  margin-bottom: 25px;
+.about-content .intro-section,
+.about-content .edu-section {
+  flex: 1;
 }
-.skills .skill-item .skill-info {
+.about-content h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.about-content p {
+  line-height: 1.8;
+  color: #444;
+}
+.about-content ul {
+  list-style: none;
+}
+.about-content ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.about-content ul li .circle {
+  width: 8px;
+  height: 8px;
+  background: #6c5ce7;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.skill-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 60px;
+  text-align: left;
+}
+.skill-list .skill-item .skill-info {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 8px;
   font-weight: bold;
 }
-.skills .skill-item .progress-bar {
-  background: #e0e0e0;
+.skill-list .skill-item .progress-bar {
+  background: #eee;
   height: 8px;
   border-radius: 10px;
 }
-.skills .skill-item .progress-bar .progress {
+.skill-list .skill-item .progress-bar .progress {
   background: #6c5ce7;
   height: 100%;
   border-radius: 10px;
@@ -177,17 +192,17 @@ section .section-desc {
 .projects .project-grid .project-card {
   background: #fdfdfd;
   border: 1px solid #eee;
-  padding: 30px 10px;
-  text-align: center;
-  border-radius: 8px;
+  padding: 40px 20px;
+  border-radius: 12px;
   transition: 0.3s;
   text-decoration: none;
   color: inherit;
   display: block;
+  text-align: center;
 }
 .projects .project-grid .project-card:hover {
-  transform: translateY(-5px);
   border-color: #5c67f2;
+  transform: translateY(-5px);
 }
 
 footer {
@@ -199,11 +214,11 @@ footer .social-footer {
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 footer .social-footer a {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   background: #eee;
   display: flex;
@@ -216,4 +231,8 @@ footer .social-footer a {
 footer .social-footer a:hover {
   background: #6c5ce7;
   color: white;
+}
+footer p {
+  color: #999;
+  font-size: 14px;
 }/*# sourceMappingURL=style.css.map */
